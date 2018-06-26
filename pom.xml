@@ -7,6 +7,8 @@
     <groupId>com.lottery</groupId>
     <artifactId>lottery-proof-reader</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <!--打包方式：jar、war-->
+    <packaging>jar</packaging>
     <build>
         <plugins>
             <plugin>
@@ -15,7 +17,32 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <!--该项目的启动类-->
+                            <mainClass>com.lottery.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>assembly</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
