@@ -1,0 +1,8 @@
+com\lottery\productor\LotteryBuilder.class
+com\lottery\util\ListUtil.class
+com\lottery\productor\TwoColor.class
+com\lottery\Main.class
+com\lottery\proof\reader\LotteryProofReader.class
+com\lottery\productor\SupperLottery.class
+com\lottery\proof\reader\FileReader.class
+com\lottery\util\LotteryUtil.class
